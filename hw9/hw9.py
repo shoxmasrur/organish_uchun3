@@ -170,27 +170,33 @@ class Mywindow(QWidget):
     
         
     def test(self, vil):
+
+        self.cmb_tuman.clear()
         for i in self.uzbekiston:
             if i==vil:
                 self.cmb_tuman.addItems(self.uzbekiston[i])
-                self.viloyat=i
-               
+                
         
 
     def write(self):
+        self.viloyat=self.cmb_viloyat.currentText()
         self.name=self.edit_name.text()
         self.sure=self.edit_second.text()
         self.age=self.edit_age.text()
         if self.jins_M.isChecked():
             self.jins="M"
-        else :
+        elif self.jins_F.isChecked():
             self.jins="F"
+        else:
+            self.jins="Tanlanmagan"
+
 
         self.tuman=self.cmb_tuman.currentText()
 
 
-        f=open("users_information.txt", "w")
-        f.write(f"{self.name}, {self.sure}, {self.age}, {self.jins}, {self.viloyat},{self.tuman}")
+        f=open("users_information.txt", "a")
+        f.write(f"{self.name}, {self.sure}, {self.age}, {self.jins}, {self.viloyat},{self.tuman}\n")
+        
 
         f.close()
 
