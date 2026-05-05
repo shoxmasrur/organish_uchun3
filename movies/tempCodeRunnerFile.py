@@ -1,0 +1,8 @@
+ self.lbl_title=QLabel("Film nomi:")
+        self.lbl_title.setFixedWidth(80)
+        self.lbl_derector=QLabel("Rejissor:")
+        self.lbl_derector.setFixedWidth(80)
+        self.lbl_year=QLabel("Yili:")
+        self.lbl_year.setFixedWidth(80)
+        self.lbl_genre=QLabel("Janr:")
+        self.lbl_genre.setFixedWidth(80)
